@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Language Translation Tool</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f0f2f5;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        width: 75%;
+        margin: 40px auto;
+        background: #fff;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 12px rgba(0,0,0,0.1);
+    }
+
+    textarea {
+        width: 100%;
+        height: 120px;
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 6px;
+        border: 1px solid #bbb;
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    select {
+        width: 48%;
+        padding: 10px;
+        border-radius: 6px;
+        font-size: 16px;
+        border: 1px solid #bbb;
+    }
+
+    .row {
+        display: flex;
+        justify-content: space-between;
+        margin: 20px 0;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+        border: none;
+        background: #007bff;
+        color: white;
+        font-size: 17px;
+        border-radius: 6px;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+
+    button:hover {
+        background: #0056b3;
+    }
+
+    .copy-btn {
+        background: #28a745;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>🌐 Language Translation Tool</h2>
+
+    <textarea id="inputText" placeholder="Enter text here..."></textarea>
+
+    <div class="row">
+        <!-- SOURCE LANGUAGE -->
+        <select id="sourceLang">
+
+
+                     <option value="es-ES">Spanish</option>
+                    <option value="fr-FR">French</option>
+                    <option value="de-DE">German</option>
+                    <option value="en-GB">English</option>
+                    <option value="it-IT">Italian</option>
+                    <option value="pt-PT">Portuguese</option>
+                    <option value="ru-RU">Russian</option>
+                    <option value="ja-JP">Japanese</option>
+                    <option value="ko-KR">Korean</option>
+                    <option value="zh-CN">Chinese (Simplified)</option>
+                    <option value="ar-SA">Arabic</option>
+                    <option value="hi-IN">Hindi</option>
+                    <option value="tr-TR">Turkish</option>
+                    <option value="nl-NL">Dutch</option>
+                    <option value="pl-PL">Polish</option>
+                    <option value="sv-SE">Swedish</option>
+
+            <option value="en">English</option>
+            <option value="hi">Hindi</option>
+            <option value="bn">Bengali</option>
+            <option value="mr">Marathi</option>
+            <option value="gu">Gujarati</option>
+            <option value="ta">Tamil</option>
+            <option value="te">Telugu</option>
+            <option value="ml">Malayalam</option>
+            <option value="kn">Kannada</option>
+            <option value="as">Assamese</option>
+            <option value="pa">Punjabi</option>
+            <option value="ur">Urdu</option>
+            <option value="or">Odia</option>
+            <option value="ne">Nepali</option>
+            <option value="sa">Sanskrit</option>
+            <option value="sd">Sindhi</option>
+            <option value="ks">Kashmiri</option>
+            <option value="mai">Maithili</option>
+            <option value="kok">Konkani</option>
+            <option value="mni">Manipuri (Meitei)</option>
+            <option value="sat">Santali</option>
+            <option value="brx">Bodo</option>
+            <option value="doi">Dogri</option>
+
+            <!-- Extra Regional Languages -->
+            <option value="bho">Bhojpuri</option>
+            <option value="mag">Magahi</option>
+            <option value="hne">Chhattisgarhi</option>
+            <option value="hari">Haryanvi</option>
+            <option value="raj">Rajasthani</option>
+
+        </select>
+
+        <!-- TARGET LANGUAGE -->
+        <select id="targetLang">
+
+                     <option value="es-ES">Spanish</option>
+                    <option value="fr-FR">French</option>
+                    <option value="de-DE">German</option>
+                    <option value="en-GB">English</option>
+                    <option value="it-IT">Italian</option>
+                    <option value="pt-PT">Portuguese</option>
+                    <option value="ru-RU">Russian</option>
+                    <option value="ja-JP">Japanese</option>
+                    <option value="ko-KR">Korean</option>
+                    <option value="zh-CN">Chinese (Simplified)</option>
+                    <option value="ar-SA">Arabic</option>
+                    <option value="hi-IN">Hindi</option>
+                    <option value="tr-TR">Turkish</option>
+                    <option value="nl-NL">Dutch</option>
+                    <option value="pl-PL">Polish</option>
+                    <option value="sv-SE">Swedish</option>
+
+            <option value="hi">Hindi</option>
+            <option value="en">English</option>
+            <option value="bn">Bengali</option>
+            <option value="mr">Marathi</option>
+            <option value="gu">Gujarati</option>
+            <option value="ta">Tamil</option>
+            <option value="te">Telugu</option>
+            <option value="ml">Malayalam</option>
+            <option value="kn">Kannada</option>
+            <option value="as">Assamese</option>
+            <option value="pa">Punjabi</option>
+            <option value="ur">Urdu</option>
+            <option value="or">Odia</option>
+            <option value="ne">Nepali</option>
+            <option value="sa">Sanskrit</option>
+            <option value="sd">Sindhi</option>
+            <option value="ks">Kashmiri</option>
+            <option value="mai">Maithili</option>
+            <option value="kok">Konkani</option>
+            <option value="mni">Manipuri (Meitei)</option>
+            <option value="sat">Santali</option>
+            <option value="brx">Bodo</option>
+            <option value="doi">Dogri</option>
+
+            <!-- Extra Regional Languages -->
+            <option value="bho">Bhojpuri</option>
+            <option value="mag">Magahi</option>
+            <option value="hne">Chhattisgarhi</option>
+            <option value="hari">Haryanvi</option>
+            <option value="raj">Rajasthani</option>
+
+        </select>
+    </div>
+
+    <button onclick="translateText()">Translate</button>
+
+    <h3>Translated Output:</h3>
+    <textarea id="outputText" readonly></textarea>
+
+    <button class="copy-btn" onclick="copyText()">Copy</button>
+    <button class="copy-btn" onclick="speakText()">🔊 Text-to-Speech</button>
+</div>
+
+<script>
+async function translateText() {
+    const text = document.getElementById("inputText").value;
+    const source = document.getElementById("sourceLang").value;
+    const target = document.getElementById("targetLang").value;
+
+    if (!text.trim()) {
+        alert("Please enter text!");
+        return;
+    }
+
+    const apiURL = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=${source}|${target}`;
+
+    const response = await fetch(apiURL);
+    const data = await response.json();
+
+    document.getElementById("outputText").value = data.responseData.translatedText;
+}
+
+function copyText() {
+    const output = document.getElementById("outputText");
+    output.select();
+    document.execCommand("copy");
+    alert("Copied to clipboard!");
+}
+
+function speakText() {
+    const text = document.getElementById("outputText").value;
+    const msg = new SpeechSynthesisUtterance(text);
+    window.speechSynthesis.speak(msg);
+}
+</script>
+
+</body>
+</html>
